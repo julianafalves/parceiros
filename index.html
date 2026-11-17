@@ -1,0 +1,874 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Seja parceiro · Anthracite AI</title>
+<meta name="description" content="Programa de parceiros da Anthracite AI: indique ou venda sites e assistentes de IA e fique com 20% ou 50% de cada projeto.">
+<meta property="og:title" content="Seja parceiro da Anthracite AI">
+<meta property="og:description" content="Você apresenta, a gente constrói. 20% na indicação, 50% na venda completa.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Cpolygon points='11,1 21,6.5 21,15.5 11,21 1,15.5 1,6.5' fill='%231a1a1a'/%3E%3Cpolygon points='11,1 21,6.5 11,12 1,6.5' fill='%23333'/%3E%3C/svg%3E">
+<style>
+@font-face { font-family: "Geist"; font-weight: 400; font-display: swap; src: url(assets/fonts/Geist-Regular.woff) format("woff"); }
+@font-face { font-family: "Geist"; font-weight: 600; font-display: swap; src: url(assets/fonts/Geist-SemiBold.woff) format("woff"); }
+@font-face { font-family: "Instrument Serif"; font-weight: 400; font-display: swap; src: url(assets/fonts/InstrumentSerif-Regular.woff) format("woff"); }
+
+:root {
+  --coal: #16181d;
+  --muted: #5b606b;
+  --faint: #8a8f99;
+  --fog: #f6f6f3;
+  --white: #ffffff;
+  --line: rgba(22, 24, 29, 0.12);
+  --blue: #1f6fd6;
+  --blue-soft: #eaf2fd;
+  --red: #b4473c;
+  --wa: #1fa855;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--fog); color: var(--coal);
+  font-family: "Geist", -apple-system, "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px; line-height: 1.55;
+}
+img { max-width: 100%; display: block; }
+a { color: var(--blue); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+section { padding: 72px 0; border-top: 1px solid var(--line); }
+section[id] { scroll-margin-top: 64px; }
+
+/* type */
+.eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--blue); margin: 0 0 12px; }
+h1 { font-size: clamp(40px, 7vw, 68px); line-height: 1.02; letter-spacing: -.035em; font-weight: 600; margin: 0; }
+h2 { font-size: clamp(28px, 4vw, 38px); line-height: 1.1; letter-spacing: -.03em; font-weight: 600; margin: 0 0 12px; }
+h3 { font-size: 18px; line-height: 1.3; letter-spacing: -.01em; font-weight: 600; margin: 0 0 6px; }
+p { margin: 0 0 12px; }
+.lead { font-size: 18px; color: var(--muted); max-width: 640px; margin-bottom: 32px; }
+.muted { color: var(--muted); }
+.small { font-size: 14px; }
+.serif { font-family: "Instrument Serif", Georgia, serif; font-weight: 400; }
+.label { font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--faint); margin: 20px 0 8px; }
+
+/* chrome */
+.top { position: sticky; top: 0; z-index: 10; background: rgba(246,246,243,.92); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; gap: 16px; }
+.wordmark { display: inline-flex; align-items: baseline; gap: .4em; font-weight: 600; letter-spacing: -.025em; font-size: 20px; color: var(--coal); white-space: nowrap; }
+.wordmark:hover { text-decoration: none; }
+.wordmark svg { width: .82em; height: .82em; position: relative; top: .045em; flex-shrink: 0; }
+.top nav { display: flex; gap: 22px; font-size: 14px; }
+.top nav a { color: var(--muted); }
+.top nav a:hover { color: var(--coal); text-decoration: none; }
+@media (max-width: 760px) { .top nav { display: none; } }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 48px; padding: 0 22px; border-radius: 999px; font-weight: 600; font-size: 15px; border: 1px solid var(--coal); cursor: pointer; font-family: inherit; }
+.btn:hover { text-decoration: none; }
+.btn.dark { background: var(--coal); color: #fff; }
+.btn.light { background: transparent; color: var(--coal); }
+.btn.wa { background: var(--wa); border-color: var(--wa); color: #fff; }
+.btns { display: flex; flex-wrap: wrap; gap: 12px; }
+
+/* blocks */
+.card { background: var(--white); border: 1px solid var(--line); border-radius: 16px; padding: 24px; }
+.card.soft { background: #ecece6; border-color: transparent; }
+.card.blue { background: var(--blue-soft); border-color: transparent; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+@media (max-width: 820px) { .grid2, .grid3 { grid-template-columns: 1fr; } }
+ul.dash { list-style: none; padding: 0; margin: 0; }
+ul.dash li { position: relative; padding-left: 18px; margin-bottom: 6px; }
+ul.dash li::before { content: ""; position: absolute; left: 0; top: .78em; width: 9px; height: 1px; background: var(--coal); }
+ol.check { list-style: none; padding: 0; margin: 0; counter-reset: c; }
+ol.check li { counter-increment: c; position: relative; padding: 14px 0 14px 46px; border-top: 1px solid var(--line); }
+ol.check li:last-child { border-bottom: 1px solid var(--line); }
+ol.check li::before { content: counter(c); position: absolute; left: 0; top: 13px; width: 28px; height: 28px; border-radius: 50%; background: var(--coal); color: #fff; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; }
+ol.check li strong { display: block; font-weight: 600; }
+ol.check li span { color: var(--muted); }
+.x { list-style: none; padding: 0; margin: 0; }
+.x li { position: relative; padding-left: 24px; margin-bottom: 8px; color: var(--muted); }
+.x li::before, .x li::after { content: ""; position: absolute; left: 2px; top: .75em; width: 12px; height: 1.5px; background: var(--red); transform: rotate(45deg); }
+.x li::after { transform: rotate(-45deg); }
+
+/* hero */
+.hero { padding: 72px 0 72px; border-top: 0; }
+.biglogo { display: inline-flex; align-items: baseline; gap: .2em; font-weight: 600; letter-spacing: -.04em; line-height: 1; font-size: clamp(52px, 11vw, 112px); color: var(--coal); white-space: nowrap; }
+.biglogo svg { width: .66em; height: .66em; position: relative; top: .02em; flex-shrink: 0; }
+.hero .made { font-size: clamp(19px, 2.4vw, 24px); color: var(--muted); max-width: 720px; margin: 22px 0 0; line-height: 1.4; }
+.hero .made strong { color: var(--coal); font-weight: 600; }
+.hero-row { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: end; margin-top: 48px; padding-top: 40px; border-top: 1px solid var(--line); }
+@media (max-width: 860px) { .hero-row { grid-template-columns: 1fr; gap: 28px; } }
+.hero h1 { font-size: clamp(34px, 5vw, 52px); }
+.hero .sub { font-size: 18px; color: var(--muted); max-width: 520px; margin: 14px 0 26px; }
+.founders { display: flex; flex-direction: column; gap: 12px; }
+.founder { display: flex; align-items: center; gap: 14px; background: var(--white); border: 1px solid var(--line); border-radius: 18px; padding: 14px 18px 14px 14px; }
+.founder img { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+.founder .name { font-weight: 600; font-size: 16.5px; line-height: 1.2; }
+.founder .role { color: var(--muted); font-size: 14px; margin-top: 2px; }
+.pct { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 40px; }
+.pct .card { padding: 20px 22px; }
+.big { font-family: "Instrument Serif", Georgia, serif; font-size: 64px; line-height: .9; letter-spacing: -.02em; }
+.banner { margin-top: 20px; padding: 16px 22px; }
+
+/* tiers */
+.tier .big { color: var(--blue); font-size: 60px; }
+.tier .example { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line); font-weight: 600; }
+.tier { display: flex; flex-direction: column; }
+.tier .example { margin-top: auto; }
+.tier .spacer { height: 18px; }
+
+/* packages */
+.pkg { display: grid; grid-template-columns: 260px 1fr; gap: 28px; }
+@media (max-width: 760px) { .pkg { grid-template-columns: 1fr; gap: 16px; } }
+.price { font-family: "Instrument Serif", Georgia, serif; font-size: 44px; line-height: 1; margin-top: 12px; }
+.from { font-size: 13px; color: var(--muted); margin-top: 12px; }
+.from + .price { margin-top: 2px; }
+.per { font-size: 14px; color: var(--muted); margin-top: 4px; }
+.meta { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--line); font-size: 14px; }
+.meta b { font-weight: 600; }
+.stack > * + * { margin-top: 16px; }
+.after .grid3 > div { color: var(--muted); font-size: 15px; }
+.after .grid3 b { display: block; color: var(--coal); margin-bottom: 4px; }
+
+/* examples */
+.ex { display: flex; flex-direction: column; }
+.frame { border-radius: 12px; overflow: hidden; border: 1px solid var(--line); background: #fff; box-shadow: 0 1px 2px rgba(0,0,0,.04), 0 12px 32px -16px rgba(0,0,0,.18); }
+.frame .bar { height: 26px; display: flex; align-items: center; gap: 6px; padding: 0 10px; background: #ececea; border-bottom: 1px solid var(--line); }
+.frame .bar i { width: 8px; height: 8px; border-radius: 50%; background: #cfcfcb; }
+.frame .bar span { margin-left: 8px; font-size: 10.5px; color: var(--faint); background: #fff; border-radius: 5px; padding: 1px 8px; flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.frame .shot { aspect-ratio: 16 / 10; overflow: hidden; }
+.frame .shot img { width: 100%; height: 100%; object-fit: cover; object-position: top left; }
+.ex .tag { display: inline-block; font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 999px; background: var(--white); border: 1px solid var(--line); margin: 16px 0 8px; align-self: flex-start; }
+.ex .tag.real { background: var(--coal); color: #fff; border-color: var(--coal); }
+.ex p { color: var(--muted); font-size: 15px; }
+.ex .go { margin-top: auto; font-weight: 600; }
+
+/* the bar mock, drawn in HTML */
+.boteco { container-type: inline-size; height: 100%; background: #13241d; color: #f3ead8; font-family: "Geist", sans-serif; position: relative; overflow: hidden; }
+.boteco::before { content: ""; position: absolute; inset: 0; background:
+  radial-gradient(60cqw 50cqw at 85% 20%, rgba(227,163,74,.28), transparent 70%),
+  radial-gradient(40cqw 30cqw at 10% 110%, rgba(227,163,74,.14), transparent 70%); }
+.boteco > * { position: relative; }
+.bt-nav { display: flex; align-items: center; justify-content: space-between; padding: 3.4cqw 5cqw; font-size: 2.3cqw; color: rgba(243,234,216,.75); }
+.bt-logo { font-family: "Instrument Serif", Georgia, serif; font-size: 4.2cqw; color: #f3ead8; letter-spacing: -.01em; }
+.bt-logo em { color: #e3a34a; font-style: italic; }
+.bt-nav .links { display: flex; gap: 3.5cqw; }
+.bt-body { display: grid; grid-template-columns: 1.15fr 1fr; gap: 4cqw; padding: 2cqw 5cqw 0; align-items: start; }
+.bt-kicker { font-size: 2cqw; letter-spacing: .14em; text-transform: uppercase; color: #e3a34a; margin-bottom: 1.6cqw; }
+.bt-h { font-family: "Instrument Serif", Georgia, serif; font-size: 7.6cqw; line-height: .98; letter-spacing: -.01em; }
+.bt-h em { color: #e3a34a; }
+.bt-p { font-size: 2.4cqw; line-height: 1.45; color: rgba(243,234,216,.75); margin: 2.4cqw 0 3cqw; }
+.bt-btns { display: flex; gap: 1.8cqw; }
+.bt-btn { font-size: 2.2cqw; font-weight: 600; padding: 1.6cqw 2.8cqw; border-radius: 99px; background: #e3a34a; color: #13241d; white-space: nowrap; }
+.bt-btn.o { background: transparent; color: #f3ead8; border: 1px solid rgba(243,234,216,.4); }
+.bt-menu { background: #f3ead8; color: #13241d; border-radius: 2cqw; padding: 3cqw 3.2cqw; box-shadow: 0 2cqw 5cqw -2cqw rgba(0,0,0,.5); transform: rotate(1.5deg); }
+.bt-menu .t { font-family: "Instrument Serif", Georgia, serif; font-size: 4.2cqw; line-height: 1; margin-bottom: 1.6cqw; }
+.bt-menu .row { display: flex; justify-content: space-between; gap: 2cqw; font-size: 2.2cqw; padding: .9cqw 0; border-bottom: 1px dashed rgba(19,36,29,.25); }
+.bt-menu .row:last-child { border-bottom: 0; }
+.bt-menu .row b { font-weight: 600; white-space: nowrap; }
+.bt-live { display: inline-flex; align-items: center; gap: 1.2cqw; margin-top: 2.6cqw; font-size: 2.1cqw; color: rgba(243,234,216,.85); }
+.bt-live::before { content: ""; width: 1.4cqw; height: 1.4cqw; border-radius: 50%; background: #e3a34a; box-shadow: 0 0 0 .8cqw rgba(227,163,74,.25); }
+
+/* money table */
+.table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+table { width: 100%; border-collapse: collapse; min-width: 560px; background: var(--white); border-radius: 16px; overflow: hidden; border: 1px solid var(--line); }
+th, td { text-align: left; padding: 14px 16px; border-bottom: 1px solid var(--line); }
+tr:last-child td { border-bottom: 0; }
+th { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--faint); font-weight: 600; }
+td.num, th.num { text-align: right; white-space: nowrap; }
+td.hi { font-weight: 600; color: var(--blue); }
+td:first-child { white-space: nowrap; }
+.scenario .total { font-family: "Instrument Serif", Georgia, serif; font-size: 44px; line-height: 1; margin: 10px 0 4px; }
+
+/* steps */
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0 20px; }
+@media (max-width: 860px) { .steps { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .steps { grid-template-columns: 1fr; } }
+.step { padding: 14px 0; border-top: 1px solid var(--line); }
+.step .n { font-family: "Instrument Serif", Georgia, serif; font-size: 30px; line-height: 1; color: var(--blue); }
+.step .who { font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--faint); margin: 6px 0 2px; }
+
+/* faq */
+.faq { display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px; }
+@media (max-width: 760px) { .faq { grid-template-columns: 1fr; } }
+.faq div { padding: 18px 0; border-top: 1px solid var(--line); }
+.faq p { color: var(--muted); margin: 0; }
+
+/* forms */
+form .fields { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 20px; }
+@media (max-width: 640px) { form .fields { grid-template-columns: 1fr; } }
+.f { display: flex; flex-direction: column; gap: 6px; }
+.f.full { grid-column: 1 / -1; }
+.f > span { font-weight: 600; font-size: 15px; }
+.f > span small { font-weight: 400; color: var(--faint); font-size: 13px; }
+input[type=text], input[type=email], input[type=tel], input[type=date], textarea {
+  font: inherit; font-size: 16px; padding: 11px 13px; border: 1px solid rgba(22,24,29,.22); border-radius: 10px; background: #fff; color: var(--coal); width: 100%;
+}
+textarea { min-height: 84px; resize: vertical; }
+input:focus, textarea:focus { outline: 2px solid var(--blue); outline-offset: 1px; border-color: transparent; }
+.opts { display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.opts label { display: inline-flex; align-items: center; gap: 8px; font-size: 15px; cursor: pointer; }
+.opts input { width: 18px; height: 18px; accent-color: var(--coal); }
+.formsec { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-top: 18px; padding-top: 14px; border-top: 2px solid var(--coal); font-weight: 600; font-size: 17px; }
+.formsec:first-child { margin-top: 0; }
+.pill { font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 999px; background: var(--fog); }
+.pill.blue { background: var(--blue); color: #fff; }
+.send { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.send .hint { font-size: 14px; color: var(--muted); }
+details.form-card > summary { list-style: none; cursor: pointer; }
+details.form-card > summary::-webkit-details-marker { display: none; }
+details.form-card > summary .open { font-weight: 600; color: var(--blue); }
+details.form-card[open] > summary .open { display: none; }
+details.form-card[open] > summary { margin-bottom: 20px; }
+
+footer { padding: 40px 0 56px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: space-between; align-items: center; }
+
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+@media print {
+  .top, .send, .btns, .btn { display: none !important; }
+  body { background: #fff; }
+  section { padding: 28px 0; break-inside: avoid-page; }
+  details.form-card { display: block; }
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="wordmark" href="#inicio" aria-label="Anthracite AI">
+      <svg viewBox="0 0 22 22" fill="none" aria-hidden="true"><polygon points="11,1 21,6.5 21,15.5 11,21 1,15.5 1,6.5" fill="#1a1a1a" stroke="#666" stroke-width="1.2"/><polygon points="11,1 21,6.5 11,12 1,6.5" fill="#333" stroke="#555" stroke-width="0.8"/><polygon points="1,6.5 11,12 11,21" fill="#222" stroke="#444" stroke-width="0.8"/><polygon points="21,6.5 11,12 11,21" fill="#2a2a2a" stroke="#555" stroke-width="0.8"/></svg>Anthracite AI
+    </a>
+    <nav aria-label="Seções">
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#pacotes">Pacotes</a>
+      <a href="#exemplos">Exemplos</a>
+      <a href="#ganhos">Ganhos</a>
+      <a href="#ficha">Ficha</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Programa de parceiros</p>
+    <div class="biglogo" role="img" aria-label="Anthracite AI"><svg viewBox="0 0 22 22" fill="none" aria-hidden="true"><polygon points="11,1 21,6.5 21,15.5 11,21 1,15.5 1,6.5" fill="#1a1a1a" stroke="#666" stroke-width="1.2"/><polygon points="11,1 21,6.5 11,12 1,6.5" fill="#333" stroke="#555" stroke-width="0.8"/><polygon points="1,6.5 11,12 11,21" fill="#222" stroke="#444" stroke-width="0.8"/><polygon points="21,6.5 11,12 11,21" fill="#2a2a2a" stroke="#555" stroke-width="0.8"/></svg>Anthracite AI</div>
+    <p class="made">Empresa criada por <strong>Juliana Alves</strong> e <strong>Sean Rowan</strong> para construir sites e inteligência artificial para pequenos negócios.</p>
+
+    <div class="hero-row">
+      <div>
+        <h1>Queremos crescer junto com nossos parceiros.</h1>
+        <p class="sub">Você apresenta a gente para quem você conhece: o bar da esquina, a clínica do bairro, a oficina do amigo. A gente constrói, e você fica com uma parte boa de cada projeto.</p>
+        <div class="btns">
+          <a class="btn dark" href="#como-funciona">Ver como funciona</a>
+          <a class="btn light" href="#exemplos">Ver exemplos de site</a>
+        </div>
+      </div>
+      <div class="founders">
+        <div class="founder"><img src="assets/juliana.jpg" alt="Foto de Juliana Alves" width="72" height="72"><div><div class="name">Juliana Alves</div><div class="role">Sócia · São Carlos (SP) e Charlotte (EUA)</div></div></div>
+        <div class="founder"><img src="assets/sean.jpg" alt="Foto de Sean Rowan" width="72" height="72"><div><div class="name">Sean Rowan</div><div class="role">Sócio · Charlotte (EUA)</div></div></div>
+      </div>
+    </div>
+
+    <div class="pct">
+      <div class="card">
+        <div class="big">20%</div>
+        <h3 style="margin-top:10px">Indicação</h3>
+        <p class="muted small" style="margin:0">Você apresenta um dono de negócio que já quer um site e já sabe o preço. A gente faz a reunião, fecha e constrói.</p>
+      </div>
+      <div class="card">
+        <div class="big">50%</div>
+        <h3 style="margin-top:10px">Venda completa</h3>
+        <p class="muted small" style="margin:0">Você conduz a venda inteira: preço fechado, entrada paga e questionário preenchido. A gente só constrói.</p>
+      </div>
+    </div>
+    <div class="card blue banner">
+      <strong>Condição de fim de ano.</strong> Estas porcentagens valem para todo cliente registrado até <strong>15 de janeiro de 2027</strong>.
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMO FUNCIONA ============ -->
+<section id="como-funciona">
+  <div class="wrap">
+    <p class="eyebrow">Como funciona</p>
+    <h2>Duas formas de ganhar. Você escolhe até onde vai.</h2>
+    <p class="lead">Você encontra o cliente. Quanto mais da venda você conduz, maior a sua parte.</p>
+
+    <div class="grid2">
+      <div class="card tier">
+        <div class="big">20%</div>
+        <h3 style="font-size:21px;margin-top:8px">Indicação</h3>
+        <p class="muted">Você encontra um dono de negócio interessado, mostra o preço e marca uma conversa dele com a gente.</p>
+        <p class="label">Você faz</p>
+        <ul class="dash">
+          <li>Encontra o cliente e entende o que ele precisa</li>
+          <li>Mostra os exemplos e a tabela de preços</li>
+          <li>Manda a ficha de indicação</li>
+          <li>Marca uma conversa de 20 minutos com a gente</li>
+        </ul>
+        <p class="label">A gente faz</p>
+        <ul class="dash">
+          <li>A reunião de venda, a proposta e o contrato</li>
+          <li>O questionário com o cliente</li>
+          <li>O projeto, do começo ao fim</li>
+          <li>Hospedagem, garantia e suporte</li>
+        </ul>
+        <div class="spacer"></div>
+        <p class="example">Site Vitrine de R$&nbsp;2.000: você recebe R$&nbsp;400.</p>
+      </div>
+      <div class="card tier">
+        <div class="big">50%</div>
+        <h3 style="font-size:21px;margin-top:8px">Venda completa</h3>
+        <p class="muted">Você conduz a venda até o fim. O cliente chega para a gente decidido e com tudo pronto.</p>
+        <p class="label">Você faz</p>
+        <ul class="dash">
+          <li>Tudo o que está na indicação</li>
+          <li>Apresenta os pacotes e fecha o preço</li>
+          <li>Garante o aceite da proposta (a gente prepara)</li>
+          <li>Confirma o pagamento da entrada</li>
+          <li>Preenche o questionário com o cliente</li>
+          <li>É o contato do cliente até o projeto entrar no ar</li>
+        </ul>
+        <p class="label">A gente faz</p>
+        <ul class="dash">
+          <li>A proposta e o contrato</li>
+          <li>O projeto, do começo ao fim</li>
+          <li>Hospedagem, garantia e suporte</li>
+        </ul>
+        <div class="spacer"></div>
+        <p class="example">Site Vitrine de R$&nbsp;2.000: você recebe R$&nbsp;1.000.</p>
+      </div>
+    </div>
+
+    <div class="card blue" style="margin-top:20px">
+      <p class="label" style="margin-top:0;color:var(--blue)">A regra em uma frase</p>
+      <p style="margin:0;font-size:18px">Se a gente precisou fazer a reunião de venda, é <strong>indicação (20%)</strong>. Se o cliente chegou já decidido, com a entrada paga e o questionário pronto, é <strong>venda completa (50%)</strong>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PACOTES ============ -->
+<section id="pacotes">
+  <div class="wrap">
+    <p class="eyebrow">O que você vende</p>
+    <h2>Três pacotes, do site ao sistema completo.</h2>
+    <p class="lead">50% de entrada e 50% na entrega. O IA + CRM é orçado caso a caso, a partir de R$&nbsp;5.000.</p>
+
+    <div class="stack">
+      <div class="card pkg">
+        <div>
+          <h3>Site Vitrine</h3>
+          <p class="muted small" style="margin:0">Para quem não tem site, ou tem um que não traz cliente.</p>
+          <div class="price">R$&nbsp;2.000</div>
+          <div class="per">Manutenção opcional: R$&nbsp;99 por mês</div>
+          <div class="meta"><div><b>Prazo:</b> até 10 dias úteis</div><div><b>Comissão:</b> R$&nbsp;400 ou R$&nbsp;1.000</div></div>
+        </div>
+        <ul class="dash">
+          <li>Site sob medida de uma página, feito para o celular</li>
+          <li>Botão de WhatsApp, mapa, horário e formulário</li>
+          <li>Textos escritos e fotos organizadas pela gente</li>
+          <li>Perfil no Google Maps revisado</li>
+          <li>Hospedagem grátis, numa conta no nome do cliente</li>
+          <li>Endereço próprio (.com.br) opcional: R$&nbsp;40 por ano</li>
+        </ul>
+      </div>
+
+      <div class="card pkg">
+        <div>
+          <h3>Assistente de IA para e-mail</h3>
+          <p class="muted small" style="margin:0">Para quem recebe muitos e-mails de clientes e demora a responder.</p>
+          <div class="price">R$&nbsp;3.000</div>
+          <div class="per">+ R$&nbsp;490 por mês</div>
+          <div class="meta"><div><b>Prazo:</b> até 15 dias úteis</div><div><b>Comissão:</b> R$&nbsp;600 ou R$&nbsp;1.500</div></div>
+        </div>
+        <ul class="dash">
+          <li>Responde os clientes em minutos, a qualquer hora</li>
+          <li>Usa só as informações que o dono aprovou</li>
+          <li>Passa para o dono o que precisa de uma pessoa</li>
+          <li>Volta a falar com quem pediu informação e sumiu</li>
+          <li>Sempre se apresenta como assistente digital</li>
+          <li>Pode ser contratado sozinho ou junto com um site</li>
+          <li>Mensalidade inclusa: o uso da IA, ajustes nas respostas e assistência técnica</li>
+        </ul>
+      </div>
+
+      <div class="card pkg">
+        <div>
+          <h3>IA + CRM</h3>
+          <p class="muted small" style="margin:0">Para quem agenda, orça ou vende todo dia e perde cliente no meio do caminho.</p>
+          <div class="from">a partir de</div>
+          <div class="price">R$&nbsp;5.000</div>
+          <div class="per">+ mensalidade a partir de R$&nbsp;490</div>
+          <div class="meta"><div><b>Prazo:</b> definido no orçamento</div><div><b>Comissão:</b> 20% ou 50% do valor fechado</div></div>
+        </div>
+        <ul class="dash">
+          <li>Site com agendamento ou pedido de orçamento</li>
+          <li>Painel (CRM) com cada cliente e a etapa em que ele está</li>
+          <li>IA que responde por e-mail, agenda e registra tudo no painel</li>
+          <li>Acompanha quem pediu orçamento e não fechou</li>
+          <li>Lembrete antes do horário e aviso a cada cliente novo</li>
+          <li>Valor final depois de uma conversa técnica com a gente</li>
+        </ul>
+      </div>
+
+      <div class="card soft after">
+        <h3>Depois que o projeto entra no ar</h3>
+        <div class="grid3" style="margin-top:10px">
+          <div><b>Todos: 30 dias de garantia</b>A gente corrige qualquer problema. Se o cliente não gostar, devolve o dinheiro e tira o projeto do ar.</div>
+          <div><b>Vitrine com plano: R$&nbsp;99/mês</b>Pequenas mudanças (cardápio, preços, fotos, informações) e assistência técnica. Cancela quando quiser.</div>
+          <div><b>Vitrine sem plano: R$&nbsp;0</b>O site fica no ar na conta do cliente, sem custo. Cada mudança ou ajuda técnica é orçada no pedido.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXEMPLOS ============ -->
+<section id="exemplos">
+  <div class="wrap">
+    <p class="eyebrow">Exemplos para mostrar</p>
+    <h2>Mostre antes de explicar.</h2>
+    <p class="lead">Três exemplos para abrir no celular na frente do cliente. Cada um diz o que é: cliente real, demonstração ou ilustração.</p>
+
+    <div class="grid3">
+      <article class="ex">
+        <a class="frame" href="https://anthracite-ai.com/pt/portfolio/medical-clinic/demo" target="_blank" rel="noopener" aria-label="Abrir a demonstração do site de clínica">
+          <div class="bar"><i></i><i></i><i></i><span>anthracite-ai.com · clínica de demonstração</span></div>
+          <div class="shot"><img src="assets/clinica.jpg" alt="Site da Clínica Aurora, uma clínica de demonstração" loading="lazy" width="1200" height="750"></div>
+        </a>
+        <span class="tag">Demonstração</span>
+        <h3>Clínica</h3>
+        <p>Site com agendamento e uma secretária de IA que responde no chat. A clínica não existe: dá para testar à vontade, nenhum horário é marcado de verdade.</p>
+        <a class="go" href="https://anthracite-ai.com/pt/portfolio/medical-clinic/demo" target="_blank" rel="noopener">Abrir a demonstração</a>
+      </article>
+
+      <article class="ex">
+        <a class="frame" href="https://anthracite-ai.com/pt/portfolio/drive-labs" target="_blank" rel="noopener" aria-label="Ver o projeto da oficina Drive Labs">
+          <div class="bar"><i></i><i></i><i></i><span>drivelabs · mecânico móvel</span></div>
+          <div class="shot"><img src="assets/oficina.jpg" alt="Site da Drive Labs, mecânico móvel nos EUA, com tradução ilustrativa" loading="lazy" width="1200" height="750"></div>
+        </a>
+        <span class="tag real">Cliente real, nos EUA</span>
+        <h3>Oficina mecânica</h3>
+        <p>Drive Labs, mecânico móvel na Carolina do Norte: site com agendamento online e atendimento 24 horas. O site real é em inglês; a imagem mostra uma tradução ilustrativa.</p>
+        <a class="go" href="https://anthracite-ai.com/pt/portfolio/drive-labs" target="_blank" rel="noopener">Ver o projeto</a>
+      </article>
+
+      <article class="ex">
+        <div class="frame" role="img" aria-label="Ilustração de um site de bar: nome, chamada de happy hour, botão de reserva pelo WhatsApp e um cardápio com preços">
+          <div class="bar"><i></i><i></i><i></i><span>botecodaesquina.com.br</span></div>
+          <div class="shot">
+            <div class="boteco" aria-hidden="true">
+              <div class="bt-nav"><span class="bt-logo">Boteco da <em>Esquina</em></span><span class="links"><span>Cardápio</span><span>Agenda</span><span>Como chegar</span></span></div>
+              <div class="bt-body">
+                <div>
+                  <div class="bt-kicker">Happy hour · ter a sex · 17h às 20h</div>
+                  <div class="bt-h">Cerveja gelada, <em>petisco de verdade.</em></div>
+                  <div class="bt-p">Mesa na calçada, música ao vivo às sextas e o melhor bolinho do bairro.</div>
+                  <div class="bt-btns"><span class="bt-btn">Reservar no WhatsApp</span><span class="bt-btn o">Ver cardápio</span></div>
+                  <div class="bt-live">Hoje: samba ao vivo, 20h</div>
+                </div>
+                <div class="bt-menu">
+                  <div class="t">Cardápio</div>
+                  <div class="row"><span>Chopp 300 ml</span><b>R$ 12</b></div>
+                  <div class="row"><span>Caipirinha</span><b>R$ 22</b></div>
+                  <div class="row"><span>Bolinho de bacalhau (6)</span><b>R$ 38</b></div>
+                  <div class="row"><span>Mandioca frita</span><b>R$ 32</b></div>
+                  <div class="row"><span>Torresmo</span><b>R$ 29</b></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="tag">Ilustração</span>
+        <h3>Bar</h3>
+        <p>Um esboço de como fica o site de um bar: happy hour, agenda da semana, cardápio com preço e reserva pelo WhatsApp com um toque. Nome e preços são de exemplo.</p>
+        <a class="go" href="#pacotes">Este é o Site Vitrine</a>
+      </article>
+    </div>
+    <p class="small muted" style="margin-top:20px">Mais trabalhos no portfólio: <a href="https://anthracite-ai.com/pt/portfolio" target="_blank" rel="noopener">anthracite-ai.com/pt/portfolio</a></p>
+  </div>
+</section>
+
+<!-- ============ GANHOS ============ -->
+<section id="ganhos">
+  <div class="wrap">
+    <p class="eyebrow">Quanto você pode ganhar</p>
+    <h2>Sua parte em cada venda.</h2>
+    <p class="lead">A comissão é sobre o valor do projeto, o pagamento único que o cliente faz para a gente construir.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Pacote</th><th class="num">Valor do projeto</th><th class="num">Indicação (20%)</th><th class="num">Venda completa (50%)</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Site Vitrine</strong></td><td class="num">R$ 2.000</td><td class="num hi">R$ 400</td><td class="num hi">R$ 1.000</td></tr>
+          <tr><td><strong>Assistente de IA para e-mail</strong></td><td class="num">R$ 3.000</td><td class="num hi">R$ 600</td><td class="num hi">R$ 1.500</td></tr>
+          <tr><td><strong>Site Vitrine + Assistente de IA</strong></td><td class="num">R$ 5.000</td><td class="num hi">R$ 1.000</td><td class="num hi">R$ 2.500</td></tr>
+          <tr><td><strong>IA + CRM</strong></td><td class="num">a partir de R$ 5.000</td><td class="num hi">a partir de R$ 1.000</td><td class="num hi">a partir de R$ 2.500</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="label" style="margin-top:32px">Três exemplos de um mês</p>
+    <div class="grid3">
+      <div class="card soft scenario"><p class="small muted" style="margin:0">Indicou 2 clientes de Site Vitrine</p><div class="total">R$&nbsp;800</div><p class="small muted" style="margin:0">2 × R$ 400</p></div>
+      <div class="card soft scenario"><p class="small muted" style="margin:0">Vendeu 1 Site Vitrine e indicou 1 IA + CRM de R$ 5.000</p><div class="total">R$&nbsp;2.000</div><p class="small muted" style="margin:0">R$ 1.000 + R$ 1.000</p></div>
+      <div class="card soft scenario"><p class="small muted" style="margin:0">Vendeu 2 IA + CRM de R$ 5.000 do começo ao fim</p><div class="total">R$&nbsp;5.000</div><p class="small muted" style="margin:0">2 × R$ 2.500</p></div>
+    </div>
+    <p class="small muted" style="margin-top:12px">São contas de exemplo, não promessa. Você ganha quando o cliente paga.</p>
+
+    <div class="grid2" style="margin-top:32px">
+      <div>
+        <h3>Quando você recebe</h3>
+        <p class="muted">Por Pix, em duas partes: metade em até 7 dias depois que o cliente paga a entrada, e metade quando o projeto completa 30 dias no ar, o fim da garantia.</p>
+        <p class="muted">Exemplo: Site Vitrine em venda completa. R$&nbsp;500 quando o cliente paga a entrada, R$&nbsp;500 trinta dias depois que o site entra no ar.</p>
+        <p class="muted">Se o cliente usar a garantia e pedir o dinheiro de volta, a segunda parte não é paga. A primeira fica com você.</p>
+      </div>
+      <div>
+        <h3>E as mensalidades?</h3>
+        <p class="muted">Ficam com a Anthracite, inclusive o plano de manutenção do Site Vitrine. Elas pagam a hospedagem, o uso da IA e o suporte durante todo o tempo em que o cliente fica com a gente.</p>
+        <h3 style="margin-top:20px">Cliente que cresce</h3>
+        <p class="muted">Se o cliente que você trouxe contratar outro pacote em até 12 meses, você ganha a mesma porcentagem sobre o novo projeto.</p>
+      </div>
+    </div>
+
+    <div class="card blue" style="margin-top:24px">
+      <p class="label" style="margin-top:0;color:var(--blue)">Condição de fim de ano</p>
+      <p style="margin:0">Estas porcentagens valem para todo cliente registrado até <strong>15 de janeiro de 2027</strong>. Depois dessa data a parceria pode ser ajustada, mas quem você já registrou continua com as regras deste guia.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LEAD QUENTE ============ -->
+<section id="lead-quente">
+  <div class="wrap">
+    <p class="eyebrow">Indicação (20%)</p>
+    <h2>Lead quente é alguém pronto para conversar, não um nome numa lista.</h2>
+    <p class="lead">Para valer os 20%, o contato precisa cumprir os cinco pontos abaixo. Assim a nossa reunião é com quem quer mesmo, e a sua comissão vem rápido.</p>
+
+    <ol class="check">
+      <li><strong>É o dono ou quem decide.</strong><span>Não o funcionário, não o sobrinho do dono.</span></li>
+      <li><strong>Tem um problema que ele mesmo falou.</strong><span>Não tem site, o site é velho, perde cliente por demorar a responder, quer agendar online.</span></li>
+      <li><strong>Já viu a tabela de preços e não achou fora da realidade.</strong><span>Assim ninguém é pego de surpresa pelo preço na reunião.</span></li>
+      <li><strong>Aceitou uma conversa de 20 minutos com a gente nos próximos 7 dias.</strong><span>Por vídeo ou telefone, em horário marcado.</span></li>
+      <li><strong>Você mandou a ficha de indicação antes da conversa.</strong><span>Ela está no fim desta página. Leva cinco minutos.</span></li>
+    </ol>
+
+    <div class="grid2" style="margin-top:32px">
+      <div>
+        <h3>Não é lead quente</h3>
+        <ul class="x" style="margin-top:12px">
+          <li>“Meu primo talvez queira um site um dia.”</li>
+          <li>Uma lista de contatos ou um grupo de WhatsApp.</li>
+          <li>Alguém que ainda não sabe quanto custa.</li>
+          <li>Alguém que já estava conversando com a gente.</li>
+        </ul>
+        <p class="small muted">Esses contatos podem virar lead quente. Converse, mostre o preço e, se ele topar a conversa, mande a ficha.</p>
+      </div>
+      <div class="card soft">
+        <h3>Como registrar o seu cliente</h3>
+        <p class="muted">Preencha a ficha no fim desta página e mande pelo WhatsApp para a Juliana. Em até 1 dia útil a gente confirma se o contato é novo.</p>
+        <p class="muted" style="margin:0">A partir daí, ele é seu por <strong style="color:var(--coal)">90 dias</strong>. Se fechar nesse prazo, a comissão é sua, mesmo que a decisão demore. Se dois parceiros indicarem a mesma pessoa, vale quem registrou primeiro.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VENDA COMPLETA ============ -->
+<section id="venda-completa">
+  <div class="wrap">
+    <p class="eyebrow">Venda completa (50%)</p>
+    <h2>O cliente chega decidido, com tudo pronto para a gente começar.</h2>
+    <p class="lead">Para valer os 50%, os cinco pontos abaixo precisam estar feitos. Se faltar um, a gente devolve para você completar antes de começar o projeto.</p>
+
+    <ol class="check">
+      <li><strong>O cliente escolheu o pacote e aceitou o preço.</strong><span>O da tabela, ou o orçamento no IA + CRM. Desconto só com o OK da Juliana.</span></li>
+      <li><strong>Aceitou a proposta e o contrato.</strong><span>A gente prepara e manda o link. Ele aceita online.</span></li>
+      <li><strong>Pagou a entrada de 50% direto para a Anthracite.</strong><span>Nunca para você.</span></li>
+      <li><strong>O questionário está completo, com os materiais.</strong><span>Logo, fotos, textos que ele já tem, links e acessos. O questionário está no fim desta página.</span></li>
+      <li><strong>Você continua como o contato do cliente até o projeto entrar no ar.</strong><span>Mostra a primeira versão, junta os pedidos de ajuste numa lista só e manda para a gente. Uma rodada de ajustes está incluída.</span></li>
+    </ol>
+    <p class="small muted" style="margin-top:14px">Se a gente precisar fazer a reunião de venda com o cliente, vira indicação (20%). No IA + CRM, a conversa técnica para fechar o orçamento é sempre com a gente e não conta como reunião de venda: se o resto foi você, continua sendo venda completa.</p>
+
+    <p class="label" style="margin-top:36px">O caminho, do primeiro contato ao site no ar</p>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><div class="who">Você</div>Registra o cliente com a ficha de indicação.</div>
+      <div class="step"><div class="n">2</div><div class="who">Você</div>Mostra os exemplos e o preço, e fecha o pacote.</div>
+      <div class="step"><div class="n">3</div><div class="who">A gente</div>Manda a proposta e o contrato em até 1 dia útil.</div>
+      <div class="step"><div class="n">4</div><div class="who">Cliente</div>Aceita e paga a entrada. Você recebe a primeira parte.</div>
+      <div class="step"><div class="n">5</div><div class="who">Você</div>Preenche o questionário com o cliente (uns 40 minutos) e manda os materiais.</div>
+      <div class="step"><div class="n">6</div><div class="who">A gente</div>Constrói e manda a primeira versão para você mostrar.</div>
+      <div class="step"><div class="n">7</div><div class="who">Você</div>Junta os ajustes do cliente numa lista. A gente ajusta.</div>
+      <div class="step"><div class="n">8</div><div class="who">Cliente</div>Aprova e paga o restante. Projeto no ar. Trinta dias depois, você recebe a segunda parte.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMBINADOS ============ -->
+<section id="combinados">
+  <div class="wrap">
+    <p class="eyebrow">Combinados</p>
+    <h2>O que vale para todo mundo.</h2>
+    <p class="lead">Poucas regras, para proteger você, o cliente e o nome que a gente está construindo junto.</p>
+    <ol class="check">
+      <li><strong>O dinheiro vai direto para a Anthracite.</strong><span>Você nunca recebe pagamento do cliente, nem adiantado, nem “para facilitar”.</span></li>
+      <li><strong>Preço é o da tabela.</strong><span>Desconto só com o OK da Juliana. A comissão é sobre o valor que o cliente pagou.</span></li>
+      <li><strong>Prometa só o que está no pacote.</strong><span>Pediu algo diferente? Mande para a gente orçar. A sua comissão vale igual.</span></li>
+      <li><strong>Nada de promessa de resultado.</strong><span>Não prometa primeiro lugar no Google, número de clientes nem faturamento.</span></li>
+      <li><strong>Demonstração não é cliente.</strong><span>Os exemplos dizem o que são: cliente real, demonstração ou ilustração. Apresente do mesmo jeito.</span></li>
+      <li><strong>Você é parceiro independente, não funcionário.</strong><span>Fale em nome próprio: “eu trabalho com a Anthracite”.</span></li>
+      <li><strong>Antes de fechar, confirme a vaga.</strong><span>A gente aceita até 4 projetos novos por mês, por ordem de pagamento da entrada. Mês cheio? O cliente entra no mês seguinte.</span></li>
+      <li><strong>Anúncio, panfleto ou post com o nome Anthracite só com OK.</strong><span>A gente manda o material pronto.</span></li>
+      <li><strong>Sem pressão.</strong><span>Um “agora não” de hoje pode ser um cliente daqui a três meses.</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="perguntas">
+  <div class="wrap">
+    <p class="eyebrow">Perguntas que o cliente vai fazer</p>
+    <h2>Respostas curtas para as dúvidas de sempre.</h2>
+    <p class="lead">Não sabe responder alguma? Diga “vou confirmar com a equipe” e pergunte para a gente. Melhor do que inventar.</p>
+    <div class="faq">
+      <div><h3>“Por que não faço no Wix sozinho?”</h3><p>Pode fazer. A diferença é que a gente escreve os textos, organiza o site para trazer cliente pelo WhatsApp e pelo Google, e cuida de tudo depois. Você não perde um fim de semana mexendo em site.</p></div>
+      <div><h3>“Quanto tempo demora?”</h3><p>O Site Vitrine fica no ar em até 10 dias úteis e o assistente de IA em até 15, contando da entrada paga e do questionário completo. No IA + CRM o prazo vem no orçamento.</p></div>
+      <div><h3>“Como eu pago?”</h3><p>50% de entrada para começar e 50% quando você aprovar o projeto, direto para a Anthracite.</p></div>
+      <div><h3>“Tenho que pagar mensalidade?”</h3><p>No Site Vitrine, não: o site fica no ar sem custo. O plano de R$ 99 por mês é opcional. No assistente de IA e no IA + CRM a mensalidade faz parte, sem fidelidade.</p></div>
+      <div><h3>“O site é meu?”</h3><p>Sim. Ele fica numa conta no seu nome, e a gente entra como administrador para cuidar dele. Quer um endereço próprio (.com.br)? A gente explica como registrar: R$ 40 por ano.</p></div>
+      <div><h3>“E se eu não gostar?”</h3><p>Você tem 30 dias depois que o projeto entra no ar. A gente corrige qualquer problema ou devolve o seu dinheiro.</p></div>
+      <div><h3>“E se eu quiser mudar algo depois?”</h3><p>Com o plano de manutenção, pequenas mudanças estão incluídas: cardápio, preços, fotos, informações. Sem o plano, a gente orça cada pedido. Página nova ou site novo é sempre orçado à parte.</p></div>
+      <div><h3>“A IA vai falar besteira com o meu cliente?”</h3><p>Ela só responde com as informações que você aprovou, se apresenta como assistente digital e passa para você tudo o que não sabe ou que precisa de uma pessoa.</p></div>
+      <div><h3>“E pelo WhatsApp?”</h3><p>Por enquanto o assistente atende por e-mail. O site já leva o cliente direto para o seu WhatsApp com um toque.</p></div>
+      <div><h3>“Vocês têm clientes?”</h3><p>Sim, empresas nos Estados Unidos, que estão no portfólio com o site no ar. As demonstrações mostram o que dá para fazer no seu ramo.</p></div>
+      <div><h3>“Posso falar com alguém antes de fechar?”</h3><p>Claro. A gente marca uma conversa de 20 minutos com a Juliana ou o Sean.</p></div>
+      <div><h3>“Quem é a Anthracite?”</h3><p>A Anthracite AI cria sites inteligentes e agentes de IA para pequenas e médias empresas, e faz consultoria em IA. Com presença em Charlotte (EUA) e São Carlos (SP), atende em português e em inglês.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FICHA ============ -->
+<section id="ficha">
+  <div class="wrap">
+    <p class="eyebrow">Anexo A</p>
+    <h2>Ficha de indicação</h2>
+    <p class="lead">Preencha aqui e toque em “Enviar pelo WhatsApp”: a mensagem sai pronta, é só escolher a Juliana. Use também na venda completa, é ela que registra o cliente como seu.</p>
+
+    <form class="card" data-title="Ficha de indicação · Anthracite AI" onsubmit="return false">
+      <div class="fields">
+        <label class="f"><span>Seu nome</span><input type="text" name="Parceiro" autocomplete="name"></label>
+        <label class="f"><span>Data</span><input type="date" name="Data"></label>
+        <label class="f"><span>Nome do dono</span><input type="text" name="Dono"></label>
+        <label class="f"><span>Nome do negócio</span><input type="text" name="Negócio"></label>
+        <label class="f"><span>Ramo <small>(salão, oficina, bar, clínica...)</small></span><input type="text" name="Ramo"></label>
+        <label class="f"><span>Cidade e bairro</span><input type="text" name="Cidade e bairro"></label>
+        <label class="f"><span>WhatsApp do dono</span><input type="tel" name="WhatsApp do dono"></label>
+        <label class="f"><span>E-mail do dono</span><input type="email" name="E-mail do dono"></label>
+        <label class="f full"><span>Tem site hoje? E Instagram? <small>(cole os links)</small></span><input type="text" name="Site e Instagram"></label>
+        <label class="f full"><span>O que ele quer resolver, nas palavras dele</span><textarea name="O que quer resolver"></textarea></label>
+        <div class="f full"><span>Pacote de interesse</span>
+          <div class="opts" data-name="Pacote de interesse">
+            <label><input type="checkbox" value="Site Vitrine">Site Vitrine</label>
+            <label><input type="checkbox" value="Assistente de IA para e-mail">Assistente de IA para e-mail</label>
+            <label><input type="checkbox" value="IA + CRM">IA + CRM</label>
+            <label><input type="checkbox" value="Ainda não sabe">Ainda não sabe</label>
+          </div>
+        </div>
+        <div class="f full"><span>Ele já viu a tabela de preços?</span>
+          <div class="opts" data-name="Viu a tabela de preços">
+            <label><input type="radio" name="tabela" value="Sim, e achou dentro da realidade">Sim, e achou dentro da realidade</label>
+            <label><input type="radio" name="tabela" value="Sim, mas achou caro">Sim, mas achou caro</label>
+            <label><input type="radio" name="tabela" value="Ainda não">Ainda não</label>
+          </div>
+        </div>
+        <label class="f full"><span>Melhor dia e horário para a conversa com a gente</span><input type="text" name="Melhor horário"></label>
+        <div class="f full"><span>Como vai ser esta venda</span>
+          <div class="opts" data-name="Tipo">
+            <label><input type="radio" name="tipo" value="Indicação: a gente faz a reunião (20%)">Indicação: a gente faz a reunião (20%)</label>
+            <label><input type="radio" name="tipo" value="Venda completa: eu conduzo até o fim (50%)">Venda completa: eu conduzo até o fim (50%)</label>
+          </div>
+        </div>
+        <label class="f full"><span>Algo mais que a gente deve saber</span><textarea name="Observações"></textarea></label>
+      </div>
+      <div class="send">
+        <button type="button" class="btn wa" data-send>Enviar pelo WhatsApp</button>
+        <button type="button" class="btn light" data-copy>Copiar texto</button>
+        <span class="hint" data-status></span>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ============ QUESTIONÁRIO ============ -->
+<section id="questionario">
+  <div class="wrap">
+    <p class="eyebrow">Anexo B</p>
+    <h2>Questionário do cliente</h2>
+    <p class="lead">Preencha junto com o cliente, de preferência pessoalmente. Leva uns 40 minutos. Quanto mais completo, mais o site fica com a cara dele, e menos ajustes depois. Fotos e logo você manda separado, no mesmo WhatsApp.</p>
+
+    <details class="card form-card">
+      <summary><span class="muted">São 6 partes: o negócio, o site, materiais, o painel (IA + CRM) e o assistente (IA).</span> <span class="open">Abrir o questionário</span></summary>
+      <form data-title="Questionário do cliente · Anthracite AI" onsubmit="return false">
+        <div class="fields">
+          <div class="formsec"><span>1 · O negócio</span><span class="pill">Todos os pacotes</span></div>
+          <label class="f"><span>Nome do negócio, como deve aparecer no site</span><input type="text" name="Nome no site"></label>
+          <label class="f"><span>Horário de funcionamento</span><input type="text" name="Horário"></label>
+          <label class="f"><span>Endereço <small>(ou “atende na região de...”)</small></span><input type="text" name="Endereço"></label>
+          <label class="f"><span>WhatsApp, telefone, e-mail e Instagram</span><input type="text" name="Contatos"></label>
+          <label class="f full"><span>O que vende ou quais serviços faz <small>(os principais, com preço se quiser mostrar no site)</small></span><textarea name="Produtos e serviços"></textarea></label>
+          <label class="f full"><span>A história em poucas linhas: há quanto tempo existe e quem está por trás</span><textarea name="História"></textarea></label>
+          <label class="f full"><span>Por que o cliente escolhe vocês e não o concorrente?</span><textarea name="Diferencial"></textarea></label>
+          <label class="f full"><span>Quem é o cliente ideal?</span><input type="text" name="Cliente ideal"></label>
+
+          <div class="formsec"><span>2 · O site</span><span class="pill">Todos os pacotes</span></div>
+          <div class="f full"><span>O que o site mais precisa fazer?</span>
+            <div class="opts" data-name="Objetivo do site">
+              <label><input type="checkbox" value="Trazer mensagens no WhatsApp">Trazer mensagens no WhatsApp</label>
+              <label><input type="checkbox" value="Receber agendamentos">Receber agendamentos</label>
+              <label><input type="checkbox" value="Receber pedidos de orçamento">Receber pedidos de orçamento</label>
+              <label><input type="checkbox" value="Mostrar cardápio ou catálogo">Mostrar cardápio ou catálogo</label>
+            </div>
+          </div>
+          <label class="f full"><span>2 ou 3 sites de que ele gosta, de qualquer ramo, e o que gosta em cada um</span><textarea name="Sites de referência"></textarea></label>
+          <label class="f"><span>Tem logo? Quais as cores da marca?</span><input type="text" name="Logo e cores"></label>
+          <label class="f"><span>Já tem domínio? Qual? Quem tem o acesso?</span><input type="text" name="Domínio"></label>
+          <label class="f full"><span>As 5 perguntas que os clientes mais fazem, com a resposta</span><textarea name="Perguntas frequentes"></textarea></label>
+
+          <div class="formsec"><span>3 · Materiais</span><span class="pill">Todos os pacotes</span></div>
+          <div class="f full">
+            <div class="opts" data-name="Materiais prontos" style="flex-direction:column;gap:10px">
+              <label><input type="checkbox" value="Logo">Logo, no arquivo original se tiver</label>
+              <label><input type="checkbox" value="Fotos (6 a 15)">De 6 a 15 fotos boas: o lugar, a equipe, o trabalho, os produtos</label>
+              <label><input type="checkbox" value="Textos existentes">Textos que já existem: Instagram, folheto, cardápio, tabela de preços</label>
+              <label><input type="checkbox" value="Depoimentos autorizados">Depoimentos reais de clientes, com autorização para usar (opcional)</label>
+              <label><input type="checkbox" value="Acesso ao Google Maps">Acesso ao perfil do Google Maps (Perfil da Empresa no Google), se tiver</label>
+            </div>
+          </div>
+          <label class="f full"><span>Um e-mail do cliente para criar a conta onde o site vai ficar</span><input type="email" name="E-mail da conta do site"></label>
+
+          <div class="formsec"><span>4 · O painel de clientes</span><span class="pill blue">Só IA + CRM</span></div>
+          <label class="f full"><span>O que acontece hoje quando chega um cliente novo, passo a passo</span><textarea name="Processo atual"></textarea></label>
+          <label class="f"><span>Quem atende? Quem recebe o aviso de pedido novo?</span><input type="text" name="Quem atende"></label>
+          <label class="f"><span>As etapas <small>(ex.: novo, orçamento, agendado, concluído)</small></span><input type="text" name="Etapas"></label>
+          <label class="f full"><span>Se tiver agenda: os serviços, quanto tempo leva cada um, os dias e horários livres</span><textarea name="Agenda"></textarea></label>
+
+          <div class="formsec"><span>5 · O assistente</span><span class="pill blue">Assistente de IA e IA + CRM</span></div>
+          <label class="f"><span>Qual e-mail o assistente vai responder?</span><input type="email" name="E-mail do assistente"></label>
+          <label class="f"><span>Em nome de quem ele assina? <small>(ex.: “Atendimento da Padaria Sol”)</small></span><input type="text" name="Assinatura"></label>
+          <label class="f full"><span>As 10 perguntas mais comuns por e-mail, com a resposta certa</span><textarea name="Perguntas e respostas" style="min-height:140px"></textarea></label>
+          <label class="f full"><span>O que ele nunca deve responder ou prometer <small>(desconto, prazo, diagnóstico...)</small></span><input type="text" name="Nunca responder"></label>
+          <label class="f"><span>Para quem ele passa a conversa quando precisa de uma pessoa?</span><input type="text" name="Passa para"></label>
+          <div class="f"><span>Tom</span>
+            <div class="opts" data-name="Tom">
+              <label><input type="radio" name="tom" value="Mais formal">Mais formal</label>
+              <label><input type="radio" name="tom" value="Mais próximo">Mais próximo</label>
+            </div>
+          </div>
+
+          <div class="formsec"><span>6 · Aprovação</span><span class="pill">Todos os pacotes</span></div>
+          <label class="f"><span>Quem aprova o projeto? Nome e WhatsApp</span><input type="text" name="Quem aprova"></label>
+          <label class="f"><span>Alguma data importante? <small>(inauguração, campanha)</small></span><input type="text" name="Data importante"></label>
+        </div>
+        <div class="send">
+          <button type="button" class="btn wa" data-send>Enviar pelo WhatsApp</button>
+          <button type="button" class="btn light" data-copy>Copiar texto</button>
+          <span class="hint" data-status></span>
+        </div>
+      </form>
+    </details>
+
+    <div class="card soft" style="margin-top:20px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between">
+      <p style="margin:0">Prefere imprimir? O guia completo, com a ficha e o questionário para preencher à mão, está em PDF.</p>
+      <a class="btn dark" href="assets/guia-do-parceiro.pdf" download>Baixar o guia em PDF</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="wordmark" href="#inicio" style="font-size:17px;opacity:.75">
+      <svg viewBox="0 0 22 22" fill="none" aria-hidden="true"><polygon points="11,1 21,6.5 21,15.5 11,21 1,15.5 1,6.5" fill="#1a1a1a" stroke="#666" stroke-width="1.2"/><polygon points="11,1 21,6.5 11,12 1,6.5" fill="#333" stroke="#555" stroke-width="0.8"/><polygon points="1,6.5 11,12 11,21" fill="#222" stroke="#444" stroke-width="0.8"/><polygon points="21,6.5 11,12 11,21" fill="#2a2a2a" stroke="#555" stroke-width="0.8"/></svg>Anthracite AI
+    </a>
+    <span>Programa de parceiros · condição de fim de ano, válida até 15 de janeiro de 2027</span>
+    <a href="https://anthracite-ai.com/pt" target="_blank" rel="noopener">anthracite-ai.com</a>
+  </div>
+</footer>
+
+<script>
+  // Número da Juliana com DDI e DDD, só dígitos (ex.: "5516999999999").
+  // Vazio: o WhatsApp abre a lista de contatos para a pessoa escolher.
+  var WHATSAPP = "";
+
+  function collect(form) {
+    var lines = ["*" + form.dataset.title + "*"];
+    var fields = form.querySelectorAll(".fields > *");
+    fields.forEach(function (el) {
+      if (el.classList.contains("formsec")) {
+        lines.push("", "*" + el.querySelector("span").textContent.trim() + "*");
+        return;
+      }
+      var opts = el.querySelector(".opts");
+      if (opts) {
+        var picked = Array.prototype.map.call(opts.querySelectorAll("input:checked"), function (i) { return i.value; });
+        if (picked.length) lines.push(opts.dataset.name + ": " + picked.join(", "));
+        return;
+      }
+      var input = el.querySelector("input, textarea");
+      if (input && input.value.trim()) {
+        var v = input.value.trim();
+        if (input.type === "date") { var p = v.split("-"); v = p[2] + "/" + p[1] + "/" + p[0]; }
+        lines.push(input.name + ": " + v);
+      }
+    });
+    // drop section titles that ended up with nothing under them
+    var out = [];
+    for (var i = 0; i < lines.length; i++) {
+      var isHead = /^\*.*\*$/.test(lines[i]) && i > 0;
+      if (isHead) {
+        var j = i + 1, has = false;
+        while (j < lines.length && !/^\*.*\*$/.test(lines[j])) { if (lines[j]) has = true; j++; }
+        if (!has) { if (out[out.length - 1] === "") out.pop(); continue; }
+      }
+      out.push(lines[i]);
+    }
+    return out.join("\n");
+  }
+
+  function filled(text) { return text.split("\n").filter(function (l) { return /: /.test(l); }).length; }
+
+  document.querySelectorAll("form[data-title]").forEach(function (form) {
+    var status = form.querySelector("[data-status]");
+    form.querySelector("[data-send]").addEventListener("click", function () {
+      var text = collect(form);
+      if (!filled(text)) { status.textContent = "Preencha pelo menos um campo."; return; }
+      var url = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(text);
+      window.open(url, "_blank", "noopener");
+      status.textContent = "";
+    });
+    form.querySelector("[data-copy]").addEventListener("click", function () {
+      var text = collect(form);
+      if (!filled(text)) { status.textContent = "Preencha pelo menos um campo."; return; }
+      var done = function () { status.textContent = "Copiado. É só colar na conversa."; };
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(done, function () { fallback(text); done(); });
+      } else { fallback(text); done(); }
+    });
+  });
+
+  function fallback(text) {
+    var t = document.createElement("textarea");
+    t.value = text; t.setAttribute("readonly", ""); t.style.position = "fixed"; t.style.opacity = "0";
+    document.body.appendChild(t); t.select();
+    try { document.execCommand("copy"); } catch (e) {}
+    document.body.removeChild(t);
+  }
+</script>
+</body>
+</html>
