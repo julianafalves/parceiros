@@ -87,7 +87,7 @@ ol.check li span { color: var(--muted); }
 .hero { padding: 28px 0 44px; border-top: 0; }
 .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 40px; align-items: center; }
 @media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr; gap: 20px; } }
-.pill-partner { display: inline-flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #fff; border: 1px solid var(--line); color: var(--coal); }
+.pill-partner { display: block; font-size: clamp(19px, 2vw, 23px); font-weight: 600; letter-spacing: -.01em; color: var(--coal); }
 .biglogo { display: flex; align-items: baseline; gap: .2em; font-weight: 600; letter-spacing: -.04em; line-height: 1; font-size: clamp(44px, 7.4vw, 84px); margin-top: 14px; white-space: nowrap; color: var(--coal); }
 .biglogo svg { width: .66em; height: .66em; position: relative; top: .02em; flex-shrink: 0; }
 .hero h1 { font-size: clamp(26px, 3.6vw, 40px); line-height: 1.12; letter-spacing: -.03em; margin: 14px 0 0; max-width: 560px; }
@@ -115,7 +115,7 @@ ol.check li span { color: var(--muted); }
   .tcard p { font-size: 13px; }
   .tcard .earn { font-size: 13px; }
 }
-.xmas { display: flex; gap: 16px; align-items: center; background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 16px 20px; margin-top: 24px; }
+.xmas { display: flex; gap: 16px; align-items: center; background: #ecece6; border: 1px solid transparent; border-radius: 16px; padding: 16px 20px; margin-top: 24px; }
 .xmas-icons { font-size: 28px; letter-spacing: 2px; flex-shrink: 0; }
 .xmas strong { display: block; font-size: 16.5px; color: var(--coal); font-weight: 600; }
 .xmas span { color: var(--muted); font-size: 15px; }
