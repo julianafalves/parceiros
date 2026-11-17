@@ -1,6 +1,8 @@
 // Número da Juliana com DDI e DDD, só dígitos (ex.: "5516999999999").
   // Vazio: o WhatsApp abre a lista de contatos para a pessoa escolher.
   var WHATSAPP = "";
+  // Endereço que recebe as fichas na versão em inglês. Vazio: o e-mail abre sem destinatário.
+  var EMAIL = "";
   var EN = (document.documentElement.lang || "").indexOf("en") === 0;
   var MSG = EN
     ? { empty: "Fill in at least one field.", copied: "Copied. Paste it into the chat." }
@@ -48,8 +50,11 @@
     form.querySelector("[data-send]").addEventListener("click", function () {
       var text = collect(form);
       if (!filled(text)) { status.textContent = MSG.empty; return; }
-      var url = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(text);
-      window.open(url, "_blank", "noopener");
+      if (EN) {
+        window.location.href = "mailto:" + EMAIL + "?subject=" + encodeURIComponent(form.dataset.title) + "&body=" + encodeURIComponent(text.replace(/\*/g, ""));
+      } else {
+        window.open("https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(text), "_blank", "noopener");
+      }
       status.textContent = "";
     });
     form.querySelector("[data-copy]").addEventListener("click", function () {
