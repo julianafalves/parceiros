@@ -87,11 +87,11 @@ ol.check li span { color: var(--muted); }
 .hero { padding: 28px 0 44px; border-top: 0; }
 .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 40px; align-items: center; }
 @media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr; gap: 20px; } }
-.pill-partner { display: inline-flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: var(--red-soft); color: var(--red-deep); }
+.pill-partner { display: inline-flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #fff; border: 1px solid var(--line); color: var(--coal); }
 .biglogo { display: flex; align-items: baseline; gap: .2em; font-weight: 600; letter-spacing: -.04em; line-height: 1; font-size: clamp(44px, 7.4vw, 84px); margin-top: 14px; white-space: nowrap; color: var(--coal); }
 .biglogo svg { width: .66em; height: .66em; position: relative; top: .02em; flex-shrink: 0; }
 .hero h1 { font-size: clamp(26px, 3.6vw, 40px); line-height: 1.12; letter-spacing: -.03em; margin: 14px 0 0; max-width: 560px; }
-.hl { color: var(--red); background: linear-gradient(transparent 64%, var(--red-soft) 64%); padding: 0 .05em; }
+.hl { color: var(--blue); }
 .founders { display: flex; align-items: center; gap: 14px; margin-top: 18px; }
 .faces { display: flex; flex-shrink: 0; }
 .faces img { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; object-position: 50% 30%; border: 3px solid var(--fog); }
@@ -105,7 +105,7 @@ ol.check li span { color: var(--muted); }
 .tcard .big { font-size: 56px; }
 .tcard .tname { font-weight: 600; font-size: 18px; margin-top: 6px; }
 .tcard p { margin: 2px 0 0; color: var(--muted); font-size: 14.5px; }
-.tcard .earn { margin-top: 12px; display: inline-block; background: var(--red-soft); color: var(--red-deep); font-weight: 600; font-size: 14.5px; padding: 6px 10px; border-radius: 10px; }
+.tcard .earn { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--line); color: var(--red-deep); font-weight: 600; font-size: 14.5px; }
 @media (max-width: 860px) {
   .hero-tiers { grid-template-columns: 1fr 1fr; gap: 10px; }
   .hero-btns { display: none; }
@@ -113,11 +113,11 @@ ol.check li span { color: var(--muted); }
   .tcard .big { font-size: 42px; }
   .tcard .tname { font-size: 16px; }
   .tcard p { font-size: 13px; }
-  .tcard .earn { font-size: 13px; padding: 5px 8px; }
+  .tcard .earn { font-size: 13px; }
 }
-.xmas { display: flex; gap: 16px; align-items: center; background: linear-gradient(90deg, #fcebe8, #e8f3eb); border: 1px solid rgba(160, 40, 34, .14); border-radius: 16px; padding: 16px 20px; margin-top: 24px; }
+.xmas { display: flex; gap: 16px; align-items: center; background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 16px 20px; margin-top: 24px; }
 .xmas-icons { font-size: 28px; letter-spacing: 2px; flex-shrink: 0; }
-.xmas strong { display: block; font-size: 16.5px; color: #8f1f19; font-weight: 600; }
+.xmas strong { display: block; font-size: 16.5px; color: var(--coal); font-weight: 600; }
 .xmas span { color: var(--muted); font-size: 15px; }
 .xmas b { color: var(--coal); font-weight: 600; }
 @media (max-width: 560px) { .xmas { align-items: flex-start; padding: 14px 16px; } .xmas-icons { font-size: 22px; } }
@@ -125,7 +125,7 @@ ol.check li span { color: var(--muted); }
 /* package visuals */
 .pkg-visual { margin: 0; }
 .pkg-visual figcaption { font-size: 13.5px; color: var(--muted); margin-top: 10px; line-height: 1.45; }
-.tag-top { display: inline-block; font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 999px; background: var(--red-soft); color: var(--red-deep); margin-bottom: 8px; }
+.tag-top { display: inline-block; font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 999px; background: var(--fog); color: var(--coal); margin-bottom: 8px; }
 .pkg-combo { border: 2px solid var(--coal); }
 .chat { background: #f1f1ee; border-radius: 14px; padding: 12px; display: flex; flex-direction: column; gap: 8px; }
 .msg { max-width: 88%; padding: 8px 11px; border-radius: 12px; font-size: 13.5px; line-height: 1.35; background: #fff; border: 1px solid var(--line); }
