@@ -111,6 +111,20 @@ ol.check li span { color: var(--muted); }
 .big { font-family: "Instrument Serif", Georgia, serif; font-size: 64px; line-height: .9; letter-spacing: -.02em; }
 .banner { margin-top: 20px; padding: 16px 22px; }
 
+.hook { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 22px; background: var(--coal); color: #fff; border-radius: 16px; padding: 16px 22px; margin-bottom: 40px; }
+.hook .item { display: flex; align-items: baseline; gap: 10px; }
+.hook .num { font-family: "Instrument Serif", Georgia, serif; font-size: 34px; line-height: 1; color: #fff; }
+.hook .txt { font-size: 15px; color: rgba(255,255,255,.75); }
+.hook .sep { width: 1px; height: 28px; background: rgba(255,255,255,.2); }
+.hook .until { margin-left: auto; font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #8fbcff; }
+@media (max-width: 760px) { .hook .sep { display: none; } .hook .until { margin-left: 0; } }
+.min { margin-top: 10px; font-weight: 600; font-size: 15px; }
+ol.terms { counter-reset: t; list-style: none; padding: 0; margin: 0; columns: 2; column-gap: 40px; }
+@media (max-width: 760px) { ol.terms { columns: 1; } }
+ol.terms li { counter-increment: t; break-inside: avoid; position: relative; padding: 12px 0 12px 34px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); }
+ol.terms li::before { content: counter(t) "."; position: absolute; left: 0; top: 12px; font-weight: 600; color: var(--coal); }
+ol.terms li strong { color: var(--coal); font-weight: 600; }
+
 /* tiers */
 .tier .big { color: var(--blue); font-size: 60px; }
 .tier .example { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line); font-weight: 600; }
@@ -247,6 +261,7 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: 
       <a href="#exemplos">Exemplos</a>
       <a href="#ganhos">Ganhos</a>
       <a href="#ficha">Ficha</a>
+      <a href="#termos">Termos</a>
     </nav>
   </div>
 </header>
@@ -256,6 +271,12 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: 
 <!-- ============ HERO ============ -->
 <section class="hero">
   <div class="wrap">
+    <div class="hook">
+      <div class="item"><span class="num">R$&nbsp;400</span><span class="txt">no mínimo, por 1 indicação</span></div>
+      <span class="sep"></span>
+      <div class="item"><span class="num">R$&nbsp;1.000</span><span class="txt">no mínimo, por 1 venda</span></div>
+      <span class="until">Até 15 de janeiro</span>
+    </div>
     <p class="eyebrow">Programa de parceiros</p>
     <div class="biglogo" role="img" aria-label="Anthracite AI"><svg viewBox="0 0 22 22" fill="none" aria-hidden="true"><polygon points="11,1 21,6.5 21,15.5 11,21 1,15.5 1,6.5" fill="#1a1a1a" stroke="#666" stroke-width="1.2"/><polygon points="11,1 21,6.5 11,12 1,6.5" fill="#333" stroke="#555" stroke-width="0.8"/><polygon points="1,6.5 11,12 11,21" fill="#222" stroke="#444" stroke-width="0.8"/><polygon points="21,6.5 11,12 11,21" fill="#2a2a2a" stroke="#555" stroke-width="0.8"/></svg>Anthracite AI</div>
     <p class="made">Empresa criada por <strong>Juliana Alves</strong> e <strong>Sean Rowan</strong> para construir sites e inteligência artificial para pequenos negócios.</p>
@@ -280,15 +301,17 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: 
         <div class="big">20%</div>
         <h3 style="margin-top:10px">Indicação</h3>
         <p class="muted small" style="margin:0">Você apresenta um dono de negócio que já quer um site e já sabe o preço. A gente faz a reunião, fecha e constrói.</p>
+        <p class="min">No mínimo R$&nbsp;400 por cliente.</p>
       </div>
       <div class="card">
         <div class="big">50%</div>
         <h3 style="margin-top:10px">Venda completa</h3>
         <p class="muted small" style="margin:0">Você conduz a venda inteira: preço fechado, entrada paga e questionário preenchido. A gente só constrói.</p>
+        <p class="min">No mínimo R$&nbsp;1.000 por cliente.</p>
       </div>
     </div>
     <div class="card blue banner">
-      <strong>Condição de fim de ano.</strong> Estas porcentagens valem para todo cliente registrado até <strong>15 de janeiro de 2027</strong>.
+      <strong>Uma condição fora do comum, só no fim de ano.</strong> Estas porcentagens valem para todo cliente registrado até <strong>15 de janeiro de 2027</strong>. Depois dessa data, elas serão revistas.
     </div>
   </div>
 </section>
@@ -520,14 +543,14 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: 
       <div class="card soft scenario"><p class="small muted" style="margin:0">Vendeu 1 Site Vitrine e indicou 1 IA + CRM de R$ 5.000</p><div class="total">R$&nbsp;2.000</div><p class="small muted" style="margin:0">R$ 1.000 + R$ 1.000</p></div>
       <div class="card soft scenario"><p class="small muted" style="margin:0">Vendeu 2 IA + CRM de R$ 5.000 do começo ao fim</p><div class="total">R$&nbsp;5.000</div><p class="small muted" style="margin:0">2 × R$ 2.500</p></div>
     </div>
-    <p class="small muted" style="margin-top:12px">São contas de exemplo, não promessa. Você ganha quando o cliente paga.</p>
+    <p class="small muted" style="margin-top:12px">São contas de exemplo, não promessa. Você ganha quando a venda é concluída.</p>
 
     <div class="grid2" style="margin-top:32px">
       <div>
         <h3>Quando você recebe</h3>
-        <p class="muted">Por Pix, em duas partes: metade em até 7 dias depois que o cliente paga a entrada, e metade quando o projeto completa 30 dias no ar, o fim da garantia.</p>
-        <p class="muted">Exemplo: Site Vitrine em venda completa. R$&nbsp;500 quando o cliente paga a entrada, R$&nbsp;500 trinta dias depois que o site entra no ar.</p>
-        <p class="muted">Se o cliente usar a garantia e pedir o dinheiro de volta, a segunda parte não é paga. A primeira fica com você.</p>
+        <p class="muted">De uma vez, por Pix, em até 7 dias depois que o projeto completa 30 dias no ar, quando termina a garantia do cliente.</p>
+        <p class="muted">Exemplo: Site Vitrine em venda completa. O site entra no ar, passam os 30 dias, e você recebe R$&nbsp;1.000.</p>
+        <p class="muted">Se o cliente usar a garantia e pedir o dinheiro de volta, não há comissão.</p>
       </div>
       <div>
         <h3>E as mensalidades?</h3>
@@ -539,7 +562,7 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: 
 
     <div class="card blue" style="margin-top:24px">
       <p class="label" style="margin-top:0;color:var(--blue)">Condição de fim de ano</p>
-      <p style="margin:0">Estas porcentagens valem para todo cliente registrado até <strong>15 de janeiro de 2027</strong>. Depois dessa data a parceria pode ser ajustada, mas quem você já registrou continua com as regras deste guia.</p>
+      <p style="margin:0">Esta é uma condição fora do comum, pensada para o fim de ano. Valem os clientes registrados até <strong>15 de janeiro de 2027</strong>. Depois dessa data as porcentagens serão revistas, mas quem você já registrou continua com as regras desta página.</p>
     </div>
   </div>
 </section>
@@ -549,7 +572,7 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: 
   <div class="wrap">
     <p class="eyebrow">Indicação (20%)</p>
     <h2>Lead quente é alguém pronto para conversar, não um nome numa lista.</h2>
-    <p class="lead">Para valer os 20%, o contato precisa cumprir os cinco pontos abaixo. Assim a nossa reunião é com quem quer mesmo, e a sua comissão vem rápido.</p>
+    <p class="lead">Para valer os 20%, o contato precisa cumprir os cinco pontos abaixo. Assim a nossa reunião é com quem quer mesmo, e a venda anda mais rápido.</p>
 
     <ol class="check">
       <li><strong>É o dono ou quem decide.</strong><span>Não o funcionário, não o sobrinho do dono.</span></li>
@@ -600,11 +623,11 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: 
       <div class="step"><div class="n">1</div><div class="who">Você</div>Registra o cliente com a ficha de indicação.</div>
       <div class="step"><div class="n">2</div><div class="who">Você</div>Mostra os exemplos e o preço, e fecha o pacote.</div>
       <div class="step"><div class="n">3</div><div class="who">A gente</div>Manda a proposta e o contrato em até 1 dia útil.</div>
-      <div class="step"><div class="n">4</div><div class="who">Cliente</div>Aceita e paga a entrada. Você recebe a primeira parte.</div>
+      <div class="step"><div class="n">4</div><div class="who">Cliente</div>Aceita e paga a entrada. O projeto começa.</div>
       <div class="step"><div class="n">5</div><div class="who">Você</div>Preenche o questionário com o cliente (uns 40 minutos) e manda os materiais.</div>
       <div class="step"><div class="n">6</div><div class="who">A gente</div>Constrói e manda a primeira versão para você mostrar.</div>
       <div class="step"><div class="n">7</div><div class="who">Você</div>Junta os ajustes do cliente numa lista. A gente ajusta.</div>
-      <div class="step"><div class="n">8</div><div class="who">Cliente</div>Aprova e paga o restante. Projeto no ar. Trinta dias depois, você recebe a segunda parte.</div>
+      <div class="step"><div class="n">8</div><div class="who">Cliente</div>Aprova e paga o restante. Projeto no ar. Passada a garantia de 30 dias, você recebe a comissão.</div>
     </div>
   </div>
 </section>
@@ -786,6 +809,31 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: 
       <p style="margin:0">Prefere imprimir? O guia completo, com a ficha e o questionário para preencher à mão, está em PDF.</p>
       <a class="btn dark" href="assets/guia-do-parceiro.pdf" download>Baixar o guia em PDF</a>
     </div>
+  </div>
+</section>
+
+<section id="termos">
+  <div class="wrap">
+    <p class="eyebrow">Termos da parceria</p>
+    <h2>O combinado, por escrito.</h2>
+    <p class="lead">Para proteger você e a Anthracite. Ao mandar a primeira ficha de indicação, você concorda com estes termos.</p>
+    <ol class="terms">
+      <li><strong>Comissão só com venda concluída.</strong> Você recebe quando o cliente pagou o projeto inteiro e o projeto entrou no ar. Proposta aceita, entrada paga ou “vai fechar” ainda não geram comissão.</li>
+      <li><strong>Pagamento depois da garantia.</strong> A comissão é paga de uma vez, por Pix, em até 7 dias depois que o projeto completa 30 dias no ar. Se o cliente pedir reembolso dentro da garantia, não há comissão.</li>
+      <li><strong>Prazo desta condição.</strong> Valem os clientes registrados até 15 de janeiro de 2027 e fechados em até 90 dias do registro. Registros depois dessa data seguem as condições que estiverem valendo.</li>
+      <li><strong>Base da comissão.</strong> A porcentagem é sobre o valor do projeto efetivamente pago pelo cliente. Mensalidades, domínio e taxas não entram na conta.</li>
+      <li><strong>O cliente paga só à Anthracite.</strong> Se o parceiro receber qualquer valor do cliente, a comissão daquela venda é cancelada e a parceria pode ser encerrada.</li>
+      <li><strong>Registro e exclusividade.</strong> O cliente é seu por 90 dias a partir da confirmação do registro. Vale quem registrou primeiro. Contatos que já falavam com a Anthracite não geram comissão.</li>
+      <li><strong>Sem vínculo.</strong> A parceria não cria vínculo de emprego, sociedade ou representação. O parceiro não assina, promete nem cobra em nome da Anthracite.</li>
+      <li><strong>Promessas.</strong> Preço, prazo, desconto e escopo valem como estão neste guia ou como a Anthracite aprovar por escrito. A Anthracite não responde por promessas fora disso.</li>
+      <li><strong>A Anthracite pode recusar um projeto.</strong> Por falta de vaga, pelo escopo ou pela atividade do cliente. Projeto recusado não gera comissão.</li>
+      <li><strong>Dados de clientes.</strong> Só passe o contato de quem autorizou. Os dados servem só para esta indicação e não são compartilhados com terceiros, como pede a LGPD.</li>
+      <li><strong>Uso da marca.</strong> Só com os materiais e as páginas da Anthracite. Anúncio pago, perfil ou material próprio com o nome Anthracite só com autorização por escrito.</li>
+      <li><strong>Impostos e dados para pagamento.</strong> Cada parte cuida dos próprios impostos. Para receber, o parceiro informa nome completo, CPF ou CNPJ e uma chave Pix no próprio nome.</li>
+      <li><strong>Encerramento.</strong> Qualquer lado pode encerrar a parceria a qualquer momento, por mensagem. Comissões de vendas já concluídas continuam sendo pagas nestes termos.</li>
+      <li><strong>Mudanças.</strong> A Anthracite pode mudar estes termos para novos registros, avisando antes. O que já foi registrado segue as regras da época do registro.</li>
+      <li><strong>Tudo por escrito.</strong> Registros, aprovações e combinados valem por escrito, inclusive por WhatsApp ou e-mail.</li>
+    </ol>
   </div>
 </section>
 
