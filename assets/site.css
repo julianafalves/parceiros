@@ -120,7 +120,7 @@ ol.check li span { color: var(--muted); }
 .xmas strong { display: block; font-size: 16.5px; color: var(--coal); font-weight: 600; }
 .xmas div span { color: var(--muted); font-size: 15px; }
 .xmas b { color: var(--coal); font-weight: 600; }
-@media (max-width: 560px) { .xmas { padding: 14px 16px; } .xmas-icons { font-size: 30px; } }
+@media (max-width: 560px) { .xmas { flex-direction: column; align-items: flex-start; gap: 8px; padding: 16px 18px; } .xmas-icons { font-size: 30px; } }
 
 /* package visuals */
 .pkg-visual { margin: 0; }
@@ -283,3 +283,32 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: 
 .knows .who-list { margin: 18px auto 0; max-width: 760px; color: var(--muted); font-size: 17px; line-height: 1.7; }
 .knows .who-list span { white-space: nowrap; }
 .knows .who-list span:not(:last-child)::after { content: "·"; margin: 0 6px 0 10px; color: var(--faint); }
+
+/* mobile-first helpers */
+.faq details { padding: 0; border-top: 1px solid var(--line); }
+.faq details summary { list-style: none; cursor: pointer; padding: 16px 28px 16px 0; font-weight: 600; font-size: 17px; position: relative; }
+.faq details summary::-webkit-details-marker { display: none; }
+.faq details summary::after { content: "+"; position: absolute; right: 2px; top: 13px; font-size: 22px; font-weight: 400; color: var(--faint); }
+.faq details[open] summary::after { content: "–"; }
+.faq details p { color: var(--muted); margin: 0 0 16px; }
+.terms-box > summary { list-style: none; cursor: pointer; font-weight: 600; color: var(--blue); }
+.terms-box > summary::-webkit-details-marker { display: none; }
+.terms-box[open] > summary { margin-bottom: 16px; color: var(--coal); }
+.mbar { display: none; }
+.f.miss input, .f.miss textarea { border-color: var(--red); outline: 2px solid var(--red-soft); }
+[data-status].err { color: var(--red-deep); font-weight: 600; }
+@media (max-width: 760px) {
+  section { padding: 48px 0; }
+  .lead { font-size: 16.5px; margin-bottom: 24px; }
+  .mbar { display: flex; align-items: center; justify-content: center; position: fixed; left: 12px; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom)); z-index: 20; height: 52px; border-radius: 999px; background: var(--coal); color: #fff; font-weight: 600; font-size: 16px; box-shadow: 0 10px 30px -10px rgba(0,0,0,.45); }
+  .mbar:hover { text-decoration: none; }
+  body { padding-bottom: 84px; }
+  table, table tbody { display: block; width: 100%; min-width: 0; border: 0; background: transparent; }
+  thead { display: none; }
+  table tr { display: block; background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px; margin-bottom: 10px; }
+  table td, table td.num { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 5px 0; border: 0; text-align: right; white-space: normal; }
+  table td:first-child { display: block; text-align: left; font-size: 17px; padding-bottom: 8px; }
+  table td:not(:first-child)::before { content: attr(data-label); color: var(--muted); text-align: left; font-weight: 400; }
+  .steps .step { padding: 12px 0; }
+  .ex .frame { border-radius: 10px; }
+}

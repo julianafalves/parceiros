@@ -5,8 +5,31 @@
   var EMAIL = "";
   var EN = (document.documentElement.lang || "").indexOf("en") === 0;
   var MSG = EN
-    ? { empty: "Fill in at least one field.", copied: "Copied. Paste it into the chat." }
-    : { empty: "Preencha pelo menos um campo.", copied: "Copiado. É só colar na conversa." };
+    ? { empty: "Fill in at least one field.", copied: "Copied. Paste it into the chat.", missing: "Still missing: " }
+    : { empty: "Preencha pelo menos um campo.", copied: "Copiado. É só colar na conversa.", missing: "Falta preencher: " };
+
+  function check(form, status) {
+    var miss = [];
+    form.querySelectorAll(".f.miss").forEach(function (el) { el.classList.remove("miss"); });
+    form.querySelectorAll("[data-req]").forEach(function (input) {
+      var v = input.value.trim();
+      var ok = v !== "" && (input.type !== "email" || /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v));
+      if (!ok) {
+        var f = input.closest(".f");
+        f.classList.add("miss");
+        miss.push(f.querySelector("span").firstChild.textContent.replace("*", "").trim());
+      }
+    });
+    if (miss.length) {
+      status.classList.add("err");
+      status.textContent = MSG.missing + miss.join(", ") + ".";
+      var first = form.querySelector(".f.miss input, .f.miss textarea");
+      if (first) first.focus();
+      return false;
+    }
+    status.classList.remove("err");
+    return true;
+  }
 
   function collect(form) {
     var lines = ["*" + form.dataset.title + "*"];
@@ -48,6 +71,7 @@
   document.querySelectorAll("form[data-title]").forEach(function (form) {
     var status = form.querySelector("[data-status]");
     form.querySelector("[data-send]").addEventListener("click", function () {
+      if (!check(form, status)) return;
       var text = collect(form);
       if (!filled(text)) { status.textContent = MSG.empty; return; }
       if (EN) {
@@ -58,6 +82,7 @@
       status.textContent = "";
     });
     form.querySelector("[data-copy]").addEventListener("click", function () {
+      if (!check(form, status)) return;
       var text = collect(form);
       if (!filled(text)) { status.textContent = MSG.empty; return; }
       var done = function () { status.textContent = MSG.copied; };
