@@ -200,7 +200,7 @@ ol.terms li strong { color: var(--coal); font-weight: 600; }
 .bt-brand { display: flex; align-items: center; gap: 1.6cqw; }
 .bt-mark { width: 6.4cqw; height: 6.4cqw; flex-shrink: 0; }
 .bt-logo small { display: block; font-family: "Geist", sans-serif; font-size: 1.6cqw; letter-spacing: .2em; text-transform: uppercase; color: rgba(243,234,216,.55); margin-top: .4cqw; }
-.bt-body { display: grid; grid-template-columns: 1fr 1.1fr; gap: 3.5cqw; padding: 1.5cqw 5cqw 0; align-items: center; }
+.bt-body { padding: 1.5cqw 5cqw 0; max-width: 50cqw; }
 .bt-kicker { font-size: 2cqw; letter-spacing: .14em; text-transform: uppercase; color: #e3a34a; margin-bottom: 1.6cqw; }
 .bt-h { font-family: "Instrument Serif", Georgia, serif; font-size: 7cqw; line-height: .98; letter-spacing: -.01em; }
 .bt-h em { color: #e3a34a; }
@@ -208,10 +208,11 @@ ol.terms li strong { color: var(--coal); font-weight: 600; }
 .bt-btns { display: flex; gap: 1.6cqw; flex-wrap: wrap; }
 .bt-btn { font-size: 2.1cqw; font-weight: 600; padding: 1.5cqw 2.6cqw; border-radius: 99px; background: #e3a34a; color: #13241d; white-space: nowrap; }
 .bt-btn.o { background: transparent; color: #f3ead8; border: 1px solid rgba(243,234,216,.4); }
-.bt-photos { position: relative; height: 40cqw; }
-.boteco .bt-photos img { position: absolute; display: block; object-fit: cover; border-radius: 2cqw; box-shadow: 0 2cqw 5cqw -1.5cqw rgba(0,0,0,.6); }
-.boteco .bt-photos .bt-beer { left: 0; top: 0; width: 60%; height: 100%; object-position: 32% 50%; }
-.boteco .bt-photos .bt-food { right: 0; bottom: 0; width: 44%; height: 62%; object-position: 42% 50%; border: .7cqw solid #13241d; z-index: 1; }
+.boteco > .bt-photos { position: absolute; right: 2cqw; bottom: 0; width: 52cqw; height: 54cqw; }
+.boteco .bt-circle { position: absolute; left: 11cqw; bottom: 9cqw; width: 36cqw; height: 36cqw; border-radius: 50%; background: #2c5a46; box-shadow: inset 0 0 0 1px rgba(255,255,255,.06); }
+.boteco .bt-photos img.bt-beer, .boteco .bt-photos img.bt-meat { position: absolute; display: block; max-width: none; border-radius: 0; box-shadow: none; object-fit: contain; }
+.boteco .bt-photos img.bt-meat { width: 40cqw; height: auto; right: -5cqw; bottom: 5cqw; transform: scaleX(-1) rotate(-5deg); z-index: 2; filter: drop-shadow(0 1.2cqw 1.8cqw rgba(0,0,0,.5)); }
+.boteco .bt-photos img.bt-beer { height: 39cqw; width: auto; left: 2cqw; bottom: 8cqw; z-index: 3; filter: drop-shadow(0 1.6cqw 2.2cqw rgba(0,0,0,.5)); }
 
 /* money table */
 .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
