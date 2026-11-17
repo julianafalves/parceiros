@@ -116,11 +116,11 @@ ol.check li span { color: var(--muted); }
   .tcard .earn { font-size: 13px; }
 }
 .xmas { display: flex; gap: 16px; align-items: center; background: #ecece6; border: 1px solid transparent; border-radius: 16px; padding: 16px 20px; margin-top: 24px; }
-.xmas-icons { font-size: 28px; letter-spacing: 2px; flex-shrink: 0; }
+.xmas-icons { font-size: 38px; letter-spacing: 3px; flex-shrink: 0; line-height: 1; }
 .xmas strong { display: block; font-size: 16.5px; color: var(--coal); font-weight: 600; }
-.xmas span { color: var(--muted); font-size: 15px; }
+.xmas div span { color: var(--muted); font-size: 15px; }
 .xmas b { color: var(--coal); font-weight: 600; }
-@media (max-width: 560px) { .xmas { align-items: flex-start; padding: 14px 16px; } .xmas-icons { font-size: 22px; } }
+@media (max-width: 560px) { .xmas { padding: 14px 16px; } .xmas-icons { font-size: 30px; } }
 
 /* package visuals */
 .pkg-visual { margin: 0; }
