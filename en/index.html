@@ -9,7 +9,7 @@
 <meta property="og:title" content="Anthracite AI partner program">
 <meta property="og:description" content="You bring the client, we build. 20% for a referral, 50% for a full sale.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Cpolygon points='11,1 21,6.5 21,15.5 11,21 1,15.5 1,6.5' fill='%231a1a1a'/%3E%3Cpolygon points='11,1 21,6.5 11,12 1,6.5' fill='%23333'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="../assets/site.css?v=13">
+<link rel="stylesheet" href="../assets/site.css?v=14">
 </head>
 <body>
 
@@ -405,7 +405,7 @@
       </div>
       <div class="card soft">
         <h3>How to register your client</h3>
-        <p class="muted">Fill in the form at the end of this page with the client's day, times and contact details, and email it to us. Within 1 business day we confirm the time with them and send the invite.</p>
+        <p class="muted">Fill in the form at the end of this page with the client's day, times and contact details, and tap “Send the form”. It reaches Juliana and Sean. Within 1 business day we confirm the time with them and send the invite.</p>
         <p class="muted"><strong style="color:var(--coal)">Want to join the call?</strong> You can if you like. It's not required: just tick it on the form.</p>
         <p class="muted" style="margin:0">From then on, they're yours for <strong style="color:var(--coal)">90 days</strong>. If they close in that time, the commission is yours, even if the decision takes a while. If two partners refer the same person, whoever registered first wins.</p>
       </div>
@@ -491,17 +491,17 @@
   <div class="wrap">
     <p class="eyebrow">Appendix A</p>
     <h2>Referral form</h2>
-    <p class="lead">Fill it in here and tap “Send by email”: the email comes out ready to send to us. Fields marked * are required: without them we can't book the call. Use it for a full sale too, since it's what registers the client as yours.</p>
+    <p class="lead">Fill it in here and tap “Send the form”: it goes straight to Juliana and Sean, who confirm the call with the client. Fields marked * are required: without them we can't book the call. Use it for a full sale too, since it's what registers the client as yours.</p>
 
-    <form class="card" data-title="Referral form · Anthracite AI" onsubmit="return false">
+    <form class="card" data-kind="referral" data-title="Referral form · Anthracite AI" onsubmit="return false">
       <div class="fields">
         <div class="formsec"><span>1 · The client</span><span class="pill">Required</span></div>
-        <label class="f"><span>Owner's name *</span><input type="text" name="Owner" data-req autocomplete="off"></label>
-        <label class="f"><span>Owner's phone *</span><input type="tel" name="Owner's phone" data-req autocomplete="off"></label>
-        <label class="f full"><span>Owner's email *</span><input type="email" name="Owner's email" data-req autocomplete="off"></label>
+        <label class="f"><span>Owner's name *</span><input type="text" name="Owner" data-k="client_name" data-req autocomplete="off"></label>
+        <label class="f"><span>Owner's phone *</span><input type="tel" name="Owner's phone" data-k="client_phone" data-req autocomplete="off"></label>
+        <label class="f full"><span>Owner's email *</span><input type="email" name="Owner's email" data-k="client_email" data-req autocomplete="off"></label>
         <div class="formsec"><span>2 · The call</span><span class="pill">Required</span></div>
-        <label class="f"><span>Day of the call *</span><input type="date" name="Day of the call" data-req></label>
-        <label class="f"><span>Possible times * <small>(e.g. 10 am, 2 pm or 5 pm)</small></span><input type="text" name="Possible times" data-req></label>
+        <label class="f"><span>Day of the call *</span><input type="date" name="Day of the call" data-k="call_day" data-req></label>
+        <label class="f"><span>Possible times * <small>(e.g. 10 am, 2 pm or 5 pm)</small></span><input type="text" name="Possible times" data-k="call_times" data-req></label>
         <div class="f full"><span>Do you want to join the call? <small>(optional)</small></span>
           <div class="opts" data-name="Partner on the call">
             <label><input type="radio" name="join" value="Yes, I'd like to join">Yes, I'd like to join</label>
@@ -509,8 +509,8 @@
           </div>
         </div>
         <div class="formsec"><span>3 · You</span><span class="pill">Required</span></div>
-        <label class="f"><span>Your name *</span><input type="text" name="Partner" data-req autocomplete="name"></label>
-        <label class="f"><span>Your phone</span><input type="tel" name="Partner phone" autocomplete="tel"></label>
+        <label class="f"><span>Your name *</span><input type="text" name="Partner" data-k="partner_name" data-req autocomplete="name"></label>
+        <label class="f"><span>Your phone</span><input type="tel" name="Partner phone" data-k="partner_phone" autocomplete="tel"></label>
         <div class="f full"><span>How this sale will go</span>
           <div class="opts" data-name="Type">
             <label><input type="radio" name="type" value="Referral: you run the meeting (20%)">Referral: you run the meeting (20%)</label>
@@ -534,8 +534,9 @@
         <label class="f full"><span>What they want to fix, in their own words</span><textarea name="What they want to fix"></textarea></label>
         <label class="f full"><span>Anything else we should know</span><textarea name="Notes"></textarea></label>
       </div>
+      <input type="text" name="company_url" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
       <div class="send">
-        <button type="button" class="btn dark" data-send>Send by email</button>
+        <button type="button" class="btn dark" data-send>Send the form</button>
         <button type="button" class="btn light" data-copy>Copy text</button>
         <span class="hint" data-status></span>
       </div>
@@ -548,11 +549,11 @@
   <div class="wrap">
     <p class="eyebrow">Appendix B</p>
     <h2>Client questionnaire</h2>
-    <p class="lead">Fill it in with the client, in person if possible. It takes about 40 minutes. The more complete it is, the more the site looks like them, and the fewer changes later. Send photos and logo separately, by email.</p>
+    <p class="lead">Fill it in with the client, in person if possible. It takes about 40 minutes. The more complete it is, the more the site looks like them, and the fewer changes later. We'll arrange with you how to get the photos and logo.</p>
 
     <details class="card form-card">
       <summary><span class="muted">Six parts: the business, the website, materials, the client dashboard (CRM), the AI assistant and sign-off.</span> <span class="open">Open the questionnaire</span></summary>
-      <form data-title="Client questionnaire · Anthracite AI" onsubmit="return false">
+      <form data-kind="questionnaire" data-title="Client questionnaire · Anthracite AI" onsubmit="return false">
         <div class="fields">
           <div class="formsec"><span>1 · The business</span><span class="pill">Every package</span></div>
           <label class="f"><span>Business name, as it should appear on the site</span><input type="text" name="Name on site"></label>
@@ -613,8 +614,9 @@
           <label class="f"><span>Who approves the project? Name and phone</span><input type="text" name="Approver"></label>
           <label class="f"><span>Any important date? <small>(opening, campaign)</small></span><input type="text" name="Key date"></label>
         </div>
-        <div class="send">
-          <button type="button" class="btn dark" data-send>Send by email</button>
+        <input type="text" name="company_url" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="send">
+          <button type="button" class="btn dark" data-send>Send the questionnaire</button>
           <button type="button" class="btn light" data-copy>Copy text</button>
           <span class="hint" data-status></span>
         </div>
@@ -665,6 +667,6 @@
   </div>
 </footer>
 
-<script src="../assets/forms.js?v=12"></script>
+<script src="../assets/forms.js?v=14"></script>
 </body>
 </html>

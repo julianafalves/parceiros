@@ -312,3 +312,7 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: 
   .steps .step { padding: 12px 0; }
   .ex .frame { border-radius: 10px; }
 }
+
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.send .hint.ok { color: #1f7a45; font-weight: 600; }
+.btn[disabled] { opacity: .6; cursor: wait; }
